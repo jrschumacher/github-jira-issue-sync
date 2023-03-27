@@ -1,0 +1,16 @@
+name: Github Jira Issue Sync
+
+on:
+  workflow_dispatch:
+  repository_dispatch:
+    types:
+    - webhook
+
+jobs:
+  github-jira-issue-sync:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/github-actions@v6
+      with:
+        script: |
+          console.log(context)
